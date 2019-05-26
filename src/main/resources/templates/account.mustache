@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>JAVA BANK ACCOUNTS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<a href="http://localhost:8080/">На главную</a>
+
+<div>
+    <form method = "post" action="account/filter">
+        <input required type="text" name = "filter">
+        <button type="submit">Сортировка по ID клиента</button>
+    </form>
+</div>
+
+<div>Список счетов банка</div>
+
+<table>
+    <tr>
+        <th>Account Id</th>
+        <th>Client ID</th>
+        <th>Amount</th>
+    </tr>
+
+    {{#accounts}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{clientId}}</td>
+        <td>{{amount}}</td>
+    </tr>
+    {{/accounts}}
+</table>
+
+<div>
+    <form method="post">
+        <input required type="text" name="clientId" placeholder="ID существующего клиента" />
+        <input required type="text" name="amount" placeholder="Начальная сумма" />
+        <button type="submit">Добавить счет</button>
+    </form>
+</div>
+</body>
+</html>

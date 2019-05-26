@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>JAVA BANK TRANSACTIONS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<a href="http://localhost:8080/">На главную</a>
+
+<div>
+<form method = "post" action="transaction/filter">
+<input required type="text" name = "filter">
+<button type="submit">Найти операции по ID счета</button>
+</form>
+</div>
+
+<div>Список транзакций</div>
+
+<table>
+    <tr>
+        <th>Transaction ID</th>
+        <th>Account ID</th>
+        <th>Sum of money</th>
+    </tr>
+
+    {{#transactions}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{accountId}}</td>
+        <td>{{sumMoney}}</td>
+    </tr>
+    {{/transactions}}
+
+</table>
+
+<div>
+    <form method="post">
+        <input required type="text" name="accountId" placeholder="ID существующего счета" />
+        <input required type="text" name="sumMoney" placeholder="Изменение суммы" />
+        <button type="submit">Провести операцию</button>
+    </form>
+</div>
+</body>
+</html>

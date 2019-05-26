@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>JAVA BANK CLIENTS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<a href="http://localhost:8080/">На главную</a>
+
+<div>Список клиентов банка</div>
+
+<div>
+    <form method = "post" action="client/filter_name">
+        <input required type="text" name = "filter">
+        <button type="submit">Найти по имени</button>
+    </form>
+</div>
+
+<div>
+    <form method = "post" action="client/filter_age">
+        <input required type="text" name = "filter">
+        <button type="submit">Найти по возрасту</button>
+    </form>
+</div>
+
+<table>
+    <tr>
+        <th>Client ID</th>
+        <th>NAME</th>
+        <th>AGE</th>
+    </tr>
+
+    {{#clients}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{name}}</td>
+        <td>{{age}}</td>
+    </tr>
+    {{/clients}}
+</table>
+
+<div>
+    <form method="post">
+        <input type="text" name="name" placeholder="ФИО" />
+        <input type="text" name="age" placeholder="Возраст" />
+        <button type="submit">Добавить клиента</button>
+    </form>
+</div>
+</body>
+</html>

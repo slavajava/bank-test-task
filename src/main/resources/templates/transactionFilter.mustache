@@ -1,0 +1,25 @@
+<html>
+
+<body>
+<a href="http://localhost:8080/">На главную</a>
+<a href="http://localhost:8080/transaction">Назад</a>
+
+<table>
+    <tr>
+        <th>Transaction ID</th>
+        <th>Account ID</th>
+        <th>Sum of money</th>
+    </tr>
+
+    {{#transactions}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{accountId}}</td>
+        <td>{{sumMoney}}</td>
+    </tr>
+    {{/transactions}}
+
+</table>
+
+</body>
+</html>

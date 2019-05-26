@@ -1,0 +1,24 @@
+<html>
+
+<body>
+<a href="http://localhost:8080/">На главную</a>
+<a href="http://localhost:8080/account">Назад</a>
+
+<table>
+    <tr>
+        <th>Account Id</th>
+        <th>Client ID</th>
+        <th>Amount</th>
+    </tr>
+
+    {{#accounts}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{clientId}}</td>
+        <td>{{amount}}</td>
+    </tr>
+    {{/accounts}}
+</table>
+
+</body>
+</html>
